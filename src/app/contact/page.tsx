@@ -138,16 +138,15 @@ export default function ContactPage() {
                       Fill out the form below and we&apos;ll be in touch shortly.
                     </p>
 
-                    <form onSubmit={handleSubmit} className="space-y-5">
+                    <form action="https://formspree.io/f/maqpyvkk" method="POST" className="space-y-5">
                       <div>
                         <label className="block text-sm font-medium text-slate-300 mb-2" style={{ fontFamily: "Syne, sans-serif" }}>
                           Your Name *
                         </label>
                         <input
                           type="text"
+                          name="name"
                           required
-                          value={formData.name}
-                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           placeholder="John Smith"
                           className="w-full bg-slate-800/60 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-slate-500 focus:outline-none focus:border-primary-500 focus:bg-slate-800/80 transition-all text-sm"
                         />
@@ -159,9 +158,8 @@ export default function ContactPage() {
                         </label>
                         <input
                           type="email"
+                          name="email"
                           required
-                          value={formData.email}
-                          onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                           placeholder="you@company.com"
                           className="w-full bg-slate-800/60 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-slate-500 focus:outline-none focus:border-primary-500 focus:bg-slate-800/80 transition-all text-sm"
                         />
@@ -172,10 +170,9 @@ export default function ContactPage() {
                           Message *
                         </label>
                         <textarea
+                          name="message"
                           required
                           rows={6}
-                          value={formData.message}
-                          onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                           placeholder="Tell us about your project — what you need, your timeline, and budget range..."
                           className="w-full bg-slate-800/60 border border-white/10 rounded-xl px-4 py-3.5 text-white placeholder:text-slate-500 focus:outline-none focus:border-primary-500 focus:bg-slate-800/80 transition-all text-sm resize-none"
                         />
