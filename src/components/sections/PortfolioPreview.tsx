@@ -11,7 +11,7 @@ const projects = [
     category: "Restaurant Website",
     demo: "https://bella-vista-restaurant-one.vercel.app/",
     desc: "Elegant dining experience with online reservations, menu showcase, and ambient photography.",
-    emoji: "🍽️",
+    // emoji: "🍽️",
     tags: ["Next.js", "Tailwind", "Reservations"],
     mockColor: "bg-gradient-to-br from-amber-900/30 to-orange-800/20",
   },
