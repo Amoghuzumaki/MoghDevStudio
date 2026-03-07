@@ -14,10 +14,10 @@ const projects = [
     title: "Bella Vista Restaurant",
     category: "Restaurant Website",
     demo: "https://bella-vista-restaurant-one.vercel.app/",
-    desc: "A full-featured restaurant website featuring an interactive menu, online reservation system, and stunning food photography gallery. Built for maximum engagement and customer conversions.",
+    desc: "A full-featured restaurant website featuring an interactive menu, online reservation system, and food gallery.",
     emoji: "🍽️",
     mockColor: "from-amber-900/50 to-orange-800/30",
-    tags: ["Next.js", "Tailwind CSS", "Reservations", "CMS"],
+    tags: ["Next.js", "Tailwind", "Reservations", "CMS"],
     year: "2024",
     color: "border-amber-500/20",
   },
@@ -25,10 +25,10 @@ const projects = [
     title: "IronEdge Gym",
     category: "Fitness Platform",
     demo: "https://ironedge-gym.vercel.app",
-    desc: "A dynamic fitness brand website with class scheduling, trainer profiles, real-time availability, and membership signup flows. Designed to energize and convert.",
+    desc: "A modern gym website with class scheduling, trainer profiles, and membership signup.",
     emoji: "💪",
     mockColor: "from-zinc-800/50 to-slate-700/30",
-    tags: ["React", "Node.js", "Booking System", "Stripe"],
+    tags: ["React", "Booking", "Stripe", "Animations"],
     year: "2024",
     color: "border-red-500/20",
   },
@@ -36,27 +36,57 @@ const projects = [
     title: "Lumière Fashion Store",
     category: "Fashion E-Commerce",
     demo: "https://lumiere-fashion.vercel.app",
-    desc: "A luxury e-commerce experience for a fashion brand, featuring smooth product browsing, wishlist management, size guides, and a streamlined multi-step checkout.",
+    desc: "Luxury fashion e-commerce store with product browsing, wishlist, and checkout flow.",
     emoji: "👗",
     mockColor: "from-rose-900/50 to-pink-800/30",
-    tags: ["Next.js", "Shopify API", "Stripe", "Tailwind"],
+    tags: ["Next.js", "Stripe", "Cart", "Tailwind"],
     year: "2024",
     color: "border-rose-500/20",
+  },
+  {
+    title: "NomadStay Apartments",
+    category: "Real Estate Platform",
+    demo: "https://nomadstay-apartments.vercel.app",
+    desc: "Apartment booking platform with search filters, property listings, and booking flow.",
+    emoji: "🏠",
+    mockColor: "from-teal-900/50 to-cyan-800/30",
+    tags: ["Next.js", "Maps API", "Prisma", "PostgreSQL"],
+    year: "2023",
+    color: "border-teal-500/20",
+  },
+  {
+    title: "MindFlow Meditation App",
+    category: "Wellness App",
+    demo: "https://mindflow-meditation.vercel.app",
+    desc: "Meditation platform with guided sessions, progress tracking, and daily streaks.",
+    emoji: "🧘",
+    mockColor: "from-violet-900/50 to-purple-800/30",
+    tags: ["React Native", "Firebase", "Audio API"],
+    year: "2023",
+    color: "border-violet-500/20",
+  },
+  {
+    title: "CloudDesk SaaS Dashboard",
+    category: "SaaS Dashboard",
+    demo: "https://clouddesk-saas.vercel.app",
+    desc: "Project management SaaS dashboard with analytics, kanban boards, and collaboration tools.",
+    emoji: "📊",
+    mockColor: "from-blue-900/50 to-indigo-800/30",
+    tags: ["React", "TypeScript", "WebSockets", "Charts"],
+    year: "2023",
+    color: "border-blue-500/20",
   },
 ];
 
 export default function PortfolioPage() {
   return (
     <>
-      {/* Hero */}
+      {/* HERO */}
       <section className="relative pt-32 pb-20 overflow-hidden grid-bg">
         <div className="absolute inset-0 bg-gradient-to-b from-primary-600/5 to-transparent pointer-events-none" />
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[300px] rounded-full bg-primary-600/8 blur-[100px] pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="flex justify-center mb-4">
-            <span className="chip">Portfolio</span>
-          </div>
+          <span className="chip mb-4 inline-block">Portfolio</span>
 
           <h1
             className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white mb-6 leading-tight"
@@ -67,14 +97,13 @@ export default function PortfolioPage() {
             <span className="gradient-text">Real Results</span>
           </h1>
 
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed">
-            A showcase of our best work — spanning industries, platforms, and design styles.
-            Each project is a story of a business challenge solved.
+          <p className="text-slate-400 text-lg max-w-2xl mx-auto">
+            A showcase of our best work across industries and platforms.
           </p>
         </div>
       </section>
 
-      {/* Projects */}
+      {/* PROJECT GRID */}
       <section className="py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
@@ -89,67 +118,50 @@ export default function PortfolioPage() {
                   rel="noopener noreferrer"
                   className="block"
                 >
-
-                  <div className={`group relative overflow-hidden rounded-2xl border ${project.color} bg-slate-900/40 backdrop-blur card-hover hover:shadow-2xl hover:shadow-primary-600/10 transition-all duration-300 flex flex-col`}>
-
-                    {/* Project Visual */}
-                    <div className={`relative h-52 bg-gradient-to-br ${project.mockColor} flex items-center justify-center overflow-hidden`}>
-
-                      {/* Browser bar */}
-                      <div className="absolute top-0 left-0 right-0 h-8 bg-slate-900/60 backdrop-blur flex items-center px-3 gap-1.5 border-b border-white/5">
+                  <div
+                    className={`group relative overflow-hidden rounded-2xl border ${project.color} bg-slate-900/40 backdrop-blur hover:shadow-2xl hover:shadow-primary-600/10 transition-all duration-300 flex flex-col`}
+                  >
+                    {/* VISUAL */}
+                    <div
+                      className={`relative h-52 bg-gradient-to-br ${project.mockColor} flex items-center justify-center`}
+                    >
+                      <div className="absolute top-0 left-0 right-0 h-8 bg-slate-900/60 flex items-center px-3 gap-1.5">
                         <div className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
                         <div className="w-2.5 h-2.5 rounded-full bg-amber-400/70" />
                         <div className="w-2.5 h-2.5 rounded-full bg-emerald-400/70" />
                       </div>
 
-                      {/* Grid overlay */}
-                      <div
-                        className="absolute inset-0 opacity-10"
-                        style={{
-                          backgroundImage:
-                            "linear-gradient(rgba(255,255,255,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.08) 1px, transparent 1px)",
-                          backgroundSize: "30px 30px",
-                        }}
-                      />
-
-                      {/* Emoji preview */}
-                      <div className="text-6xl group-hover:scale-110 transition-transform duration-500 mt-6">
+                      <div className="text-6xl mt-6 group-hover:scale-110 transition-transform duration-300">
                         {project.emoji}
                       </div>
 
-                      {/* Year badge */}
-                      <div className="absolute top-10 right-3 px-2.5 py-1 bg-black/40 backdrop-blur border border-white/10 rounded-lg text-xs text-slate-400">
+                      <div className="absolute top-10 right-3 px-2 py-1 bg-black/40 text-xs text-slate-400 rounded">
                         {project.year}
                       </div>
 
-                      {/* Hover icon */}
-                      <div className="absolute inset-0 bg-primary-600/0 group-hover:bg-primary-600/15 transition-colors duration-300 flex items-center justify-center">
+                      <div className="absolute inset-0 flex items-center justify-center bg-primary-600/0 group-hover:bg-primary-600/15 transition">
                         <ExternalLink
-                          size={32}
-                          className="text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                          size={28}
+                          className="text-white opacity-0 group-hover:opacity-100 transition"
                         />
                       </div>
-
                     </div>
 
-                    {/* Content */}
+                    {/* CONTENT */}
                     <div className="p-6 flex flex-col flex-1">
 
-                      <h3
-                        className="text-white font-bold text-lg leading-snug mb-2"
-                        style={{ fontFamily: "Syne, sans-serif" }}
-                      >
+                      <h3 className="text-white font-bold text-lg mb-2">
                         {project.title}
                       </h3>
 
                       <div className="flex items-center gap-1.5 mb-3">
                         <Tag size={12} className="text-primary-400" />
-                        <span className="text-primary-400 text-xs font-medium">
+                        <span className="text-primary-400 text-xs">
                           {project.category}
                         </span>
                       </div>
 
-                      <p className="text-slate-400 text-sm leading-relaxed flex-1 mb-4">
+                      <p className="text-slate-400 text-sm flex-1 mb-4">
                         {project.desc}
                       </p>
 
@@ -157,7 +169,7 @@ export default function PortfolioPage() {
                         {project.tags.map((tag) => (
                           <span
                             key={tag}
-                            className="px-2.5 py-1 bg-white/5 border border-white/5 rounded-full text-xs text-slate-400"
+                            className="px-2 py-1 text-xs bg-white/5 rounded-full text-slate-400"
                           >
                             {tag}
                           </span>
@@ -165,15 +177,14 @@ export default function PortfolioPage() {
                       </div>
 
                     </div>
-
                   </div>
-
                 </a>
 
               </AnimateOnScroll>
             ))}
 
           </div>
+
         </div>
       </section>
 
