@@ -33,9 +33,9 @@ const projects = [
     color: "border-red-500/20",
   },
   {
-    title: "Lumière Fashion Store",
+    title: "Vexon Fashion Store",
     category: "Fashion E-Commerce",
-    demo: "https://lumiere-fashion.vercel.app",
+    demo: "https://github.com/Amoghuzumaki/FasionBrand.git",
     desc: "Luxury fashion e-commerce store with product browsing, wishlist, and checkout flow.",
     emoji: "👗",
     mockColor: "from-rose-900/50 to-pink-800/30",
