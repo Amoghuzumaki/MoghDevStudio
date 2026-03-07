@@ -35,7 +35,7 @@ const projects = [
   {
     title: "Vexon Fashion Store",
     category: "Fashion E-Commerce",
-    demo: "https://github.com/Amoghuzumaki/FasionBrand.git",
+    demo: "https://vexonfashion.vercel.app/",
     desc: "Luxury fashion e-commerce store with product browsing, wishlist, and checkout flow.",
     emoji: "👗",
     mockColor: "from-rose-900/50 to-pink-800/30",
