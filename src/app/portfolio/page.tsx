@@ -68,7 +68,7 @@ const projects = [
   {
     title: "CloudDesk SaaS Dashboard",
     category: "SaaS Dashboard",
-    demo: "https://clouddesk-saas.vercel.app",
+    demo: "https://clouddesk-saas1.vercel.app",
     desc: "Project management SaaS dashboard with analytics, kanban boards, and collaboration tools.",
     emoji: "📊",
     mockColor: "from-blue-900/50 to-indigo-800/30",
