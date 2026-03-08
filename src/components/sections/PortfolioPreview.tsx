@@ -4,37 +4,37 @@ import Link from "next/link";
 import { ArrowRight, ExternalLink } from "lucide-react";
 import SectionHeader from "@/components/ui/SectionHeader";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
+import Image from "next/image";
 
 const projects = [
   {
     title: "Bella Vista Restaurant",
     category: "Restaurant Website",
     demo: "https://bella-vista-restaurant-one.vercel.app/",
-    desc: "Elegant dining experience with online reservations, menu showcase, and ambient photography.",
-    // emoji: "🍽️",
-    tags: ["Next.js", "Tailwind", "Reservations"],
-    mockColor: "bg-gradient-to-br from-amber-900/30 to-orange-800/20",
+    image: "/projects/bella-vista.png",
+    desc: "A full-featured restaurant website featuring an interactive menu, online reservation system, and food gallery.",
+    tags: ["Next.js", "Tailwind", "Reservations", "CMS"],
+    mockColor: "from-amber-900/50 to-orange-800/30",
   },
   {
     title: "IronEdge Gym",
     category: "Fitness Website",
     demo: "https://ironedge-gym.vercel.app",
+    image: "/projects/ironedge.png",
     desc: "High-energy fitness brand website with class scheduling, trainer profiles, and membership plans.",
-    emoji: "💪",
     tags: ["React", "Animations", "Booking"],
     mockColor: "bg-gradient-to-br from-slate-800/50 to-zinc-900/30",
   },
   {
-    title: "Lumière Fashion",
+    title: "Vexon Fashion",
     category: "E-Commerce Store",
-    demo: "https://lumiere-fashion.vercel.app",
+    demo: "https://vexonfashion.vercel.app",
+    image: "/projects/vexon.png",
     desc: "Luxury fashion e-commerce with smooth product browsing, cart system, and checkout flow.",
-    emoji: "👗",
     tags: ["Next.js", "E-Commerce", "Stripe"],
     mockColor: "bg-gradient-to-br from-rose-900/30 to-pink-800/20",
   },
 ];
-
 export default function PortfolioPreview() {
   return (
     <section className="section-pad relative">
@@ -69,9 +69,7 @@ export default function PortfolioPreview() {
                 <div className="group relative overflow-hidden rounded-2xl border border-white/5 hover:border-primary-600/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary-600/10 card-hover">
 
                   {/* Mock browser window */}
-                  <div
-                    className={`relative h-52 ${project.mockColor} flex items-center justify-center overflow-hidden`}
-                  >
+                  <div className="relative h-52 overflow-hidden">
 
                     {/* Browser bar */}
                     <div className="absolute top-0 left-0 right-0 h-8 bg-slate-900/60 backdrop-blur flex items-center px-3 gap-1.5 border-b border-white/5">
@@ -90,9 +88,12 @@ export default function PortfolioPreview() {
                     </div>
 
                     {/* Emoji preview */}
-                    <div className="text-6xl mt-6 group-hover:scale-110 transition-transform duration-300">
-                      {project.emoji}
-                    </div>
+                    <Image
+                      src={project.image}
+                      alt={project.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition duration-300"
+                    />
 
                     {/* Grid overlay */}
                     <div

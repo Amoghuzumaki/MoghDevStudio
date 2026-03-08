@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ExternalLink, Tag } from "lucide-react";
 import AnimateOnScroll from "@/components/ui/AnimateOnScroll";
 import CTA from "@/components/sections/CTA";
-
+import Image from "next/image"; 
 export const metadata: Metadata = {
   title: "Portfolio",
   description:
@@ -14,8 +14,8 @@ const projects = [
     title: "Bella Vista Restaurant",
     category: "Restaurant Website",
     demo: "https://bella-vista-restaurant-one.vercel.app/",
+    image: "/projects/bella-vista.png",
     desc: "A full-featured restaurant website featuring an interactive menu, online reservation system, and food gallery.",
-    emoji: "🍽️",
     mockColor: "from-amber-900/50 to-orange-800/30",
     tags: ["Next.js", "Tailwind", "Reservations", "CMS"],
     year: "2024",
@@ -26,7 +26,7 @@ const projects = [
     category: "Fitness Platform",
     demo: "https://ironedge-gym.vercel.app",
     desc: "A modern gym website with class scheduling, trainer profiles, and membership signup.",
-    emoji: "💪",
+    image: "/projects/ironedge.png",
     mockColor: "from-zinc-800/50 to-slate-700/30",
     tags: ["React", "Booking", "Stripe", "Animations"],
     year: "2024",
@@ -37,7 +37,7 @@ const projects = [
     category: "Fashion E-Commerce",
     demo: "https://vexonfashion.vercel.app/",
     desc: "Luxury fashion e-commerce store with product browsing, wishlist, and checkout flow.",
-    emoji: "👗",
+    image: "/projects/vexon.png",
     mockColor: "from-rose-900/50 to-pink-800/30",
     tags: ["Next.js", "Stripe", "Cart", "Tailwind"],
     year: "2024",
@@ -48,7 +48,7 @@ const projects = [
     category: "Real Estate Platform",
     demo: "https://nomadstay-apartments.vercel.app",
     desc: "Apartment booking platform with search filters, property listings, and booking flow.",
-    emoji: "🏠",
+    image: "/projects/nomadstay.png",
     mockColor: "from-teal-900/50 to-cyan-800/30",
     tags: ["Next.js", "Maps API", "Prisma", "PostgreSQL"],
     year: "2023",
@@ -59,7 +59,7 @@ const projects = [
     category: "Wellness App",
     demo: "https://mindflow-meditation.vercel.app",
     desc: "Meditation platform with guided sessions, progress tracking, and daily streaks.",
-    emoji: "🧘",
+    image: "/projects/mindflow.png",
     mockColor: "from-violet-900/50 to-purple-800/30",
     tags: ["React Native", "Firebase", "Audio API"],
     year: "2023",
@@ -70,7 +70,7 @@ const projects = [
     category: "SaaS Dashboard",
     demo: "https://clouddesk-saas1.vercel.app",
     desc: "Project management SaaS dashboard with analytics, kanban boards, and collaboration tools.",
-    emoji: "📊",
+    image: "/projects/clouddesk.png",
     mockColor: "from-blue-900/50 to-indigo-800/30",
     tags: ["React", "TypeScript", "WebSockets", "Charts"],
     year: "2023",
@@ -122,17 +122,19 @@ export default function PortfolioPage() {
                     className={`group relative overflow-hidden rounded-2xl border ${project.color} bg-slate-900/40 backdrop-blur hover:shadow-2xl hover:shadow-primary-600/10 transition-all duration-300 flex flex-col`}
                   >
                     {/* VISUAL */}
-                    <div
-                      className={`relative h-52 bg-gradient-to-br ${project.mockColor} flex items-center justify-center`}
-                    >
+                    <div className="relative h-52 overflow-hidden">
+
+                      <Image
+                        src={project.image}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition duration-300"
+                      />
+
                       <div className="absolute top-0 left-0 right-0 h-8 bg-slate-900/60 flex items-center px-3 gap-1.5">
                         <div className="w-2.5 h-2.5 rounded-full bg-red-400/70" />
                         <div className="w-2.5 h-2.5 rounded-full bg-amber-400/70" />
                         <div className="w-2.5 h-2.5 rounded-full bg-emerald-400/70" />
-                      </div>
-
-                      <div className="text-6xl mt-6 group-hover:scale-110 transition-transform duration-300">
-                        {project.emoji}
                       </div>
 
                       <div className="absolute top-10 right-3 px-2 py-1 bg-black/40 text-xs text-slate-400 rounded">
@@ -145,6 +147,7 @@ export default function PortfolioPage() {
                           className="text-white opacity-0 group-hover:opacity-100 transition"
                         />
                       </div>
+
                     </div>
 
                     {/* CONTENT */}
