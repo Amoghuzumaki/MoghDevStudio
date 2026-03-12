@@ -10,7 +10,13 @@ export const metadata: Metadata = {
   },
   description:
     "MoghDevStudio helps businesses grow online through modern websites, mobile apps, and UI/UX design. Expert solutions, affordable pricing, on-time delivery.",
-  keywords: ["web development", "app development", "UI/UX design", "website redesign", "software agency"],
+  keywords: [
+    "web development agency",
+    "app development",
+    "UI UX design services",
+    "website redesign",
+    "software development agency"
+  ],
   authors: [{ name: "MoghDevStudio" }],
   openGraph: {
     type: "website",
@@ -29,12 +35,30 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
+
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    name: "MoghDevStudio",
+    url: "https://mogh-dev-studio.vercel.app/",
+    logo: "https://mogh-dev-studio.vercel.app/logo.png",
+    sameAs: [
+      "https://www.instagram.com/moghdevstudio",
+      "https://www.linkedin.com/company/moghdevstudio"
+    ]
+  };
+
   return (
     <html lang="en" className="scroll-smooth">
       <body className="noise">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+
         <Navbar />
         <main>{children}</main>
         <Footer />
